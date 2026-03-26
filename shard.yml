@@ -1,0 +1,13 @@
+name: n-high-lovelive
+version: 0.1.0
+
+authors:
+  - marukun712 <marukun530@gmail.com>
+
+targets:
+  n-high-lovelive:
+    main: src/n-high-lovelive.cr
+
+crystal: '>= 1.18.2'
+
+license: MIT
