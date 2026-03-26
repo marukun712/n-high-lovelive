@@ -22,8 +22,9 @@
       {
         devShell = pkgs.mkShell {
           buildInputs = [
-            pkgs.bun
-            pkgs.opencode
+            pkgs.crystal
+            pkgs.crystalline
+            pkgs.shards
           ];
         };
       }

@@ -1,6 +1,7 @@
-# TODO: Write documentation for `N::High::Lovelive`
-module N::High::Lovelive
-  VERSION = "0.1.0"
+require "kemal"
 
-  # TODO: Put your code here
+get "/" do |env|
+  send_file env, "./public/index.html"
 end
+
+Kemal.run

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N高グループラブライブ同好会ホームページ</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pink.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Murecho:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'ovk6qdc',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+  <style>
+    * {
+      font-family: "Noto Sans JP", sans-serif;
+    }
+
+    :root {
+      --pico-primary: #e40080;
+      --pico-primary-hover: #c20070;
+      --pico-primary-focus: rgba(228, 0, 128, .25);
+      --pico-primary-inverse: #fff;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background: url("/circle-scatter-haikei.svg") center / cover no-repeat;
+      opacity: 0.2;
+
+      z-index: -1;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 6vw, 4.0rem);
+      color: #e40080;
+      font-family: "ab-kirigirisu", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      color: #e40080;
+      border-left: 6px solid #e40080;
+      padding-left: .6em;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    article {
+      background: rgba(255, 255, 255, .78);
+      backdrop-filter: blur(6px);
+    }
+
+    nav[aria-label] {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 224, 242, .88);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid #e40080;
+    }
+
+    @media (max-width: 1280px) {
+      .hero-image {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-title {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="main navigation" class="container-fluid">
+    <ul>
+      <li><strong style="font-family:ab-kirigirisu,sans-serif;font-weight:400;font-style:normal;"
+          class="nav-title">N高グループラブライブ同好会</strong>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="#home">ホーム</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#blog">ブログ</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="container" style="padding-top:5rem;padding-bottom:5rem;">
+    <div class="grid">
+      <div>
+        <h1 class="hero-title fade-up" id="hero-title">
+          N高グループ<br />ラブライブ同好会
+        </h1>
+        <p class="hero-sub fade-up" id="hero-sub">
+          N高グループラブライブ同好会は、N中等部・N高グループ生のためのラブライブファンコミュニティです。
+        </p>
+        <div class="fade-up">
+          <a href="#about" role="button">コミュニティに参加する</a>
+        </div>
+      </div>
+      <div>
+        <div class="fade-up" id="hero-image">
+          <img src="./PC286206_01.jpg" style="border-radius:20px;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="container about fade-up" style="padding-bottom:5rem;">
+    <h2 class="section-title">About &amp; 活動内容</h2>
+    <p style="color:#555;margin-top:1rem;margin-bottom:3rem;">
+      N高グループラブライブ同好会は、N中等部・N高グループ生のためのラブライブファンコミュニティです。2026年3月現在、約20名のメンバーが所属しています。
+    </p>
+
+    <div class="grid">
+      <article>
+        <header>情報共有</header>
+        <p>
+          Discordサーバーでは、ラブライブ！シリーズ関連情報の共有・雑談が行われています。
+        </p>
+      </article>
+      <article>
+        <header>雑談会・定例会</header>
+        <p>
+          雑談会・定例会の実施を検討しています。
+        </p>
+      </article>
+      <article>
+        <header>イベント参加</header>
+        <p>
+          ライブ等のイベントでは、同好会メンバーでオフ会などが行われることがあります。
+        </p>
+      </article>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <h3 class="section-title">参加方法</h3>
+      <div class="grid" style="margin-top:1.5rem;">
+        <article>
+          <header><strong>Step 1</strong> 同好会チャンネルに参加</header>
+          <p>学内Slackで、#虹ヶ咲学園スクールアイドル同好会 チャンネルに参加してください。</p>
+        </article>
+        <article>
+          <header><strong>Step 2</strong> Discordに参加</header>
+          <p>
+            活動は主にDiscordで行っていますので、Slackチャンネルの関連リンクからDiscordサーバーに参加してください。
+          </p>
+        </article>
+        <article>
+          <header><strong>Step 3</strong> 自己紹介を投稿</header>
+          <p>
+            Discordサーバーの#自己紹介に、自己紹介を投稿してみましょう！
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    gsap.timeline({ delay: 0.4 })
+      .to('#hero-title', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
+      .to('#hero-sub', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
+      .to('#hero-btns', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
+      .to('#hero-image', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
+      .to('#about', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' });
+  </script>
+</body>
+
+</html>

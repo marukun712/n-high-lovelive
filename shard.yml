@@ -8,6 +8,11 @@ targets:
   n-high-lovelive:
     main: src/n-high-lovelive.cr
 
-crystal: '>= 1.18.2'
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+  discordcr:
+    github: shardlab/discordcr
 
+crystal: '>= 1.18.2'
 license: MIT
