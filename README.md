@@ -1,27 +1,31 @@
 # n-high-lovelive
 
-TODO: Write a description here
+Crystalとhtmxで書かれた、N高ラブライブ同好会のホームページです。Discordから記事を管理できます。
 
-## Installation
+# Requirements
 
-TODO: Write installation instructions here
+Nix
 
-## Usage
+# Usage
 
-TODO: Write usage instructions here
+依存関係を解決します。
+```bash
+shards install
+```
 
-## Development
+このプロジェクトはdirenvを使用しています。
 
-TODO: Write development instructions here
+`.envrc`に以下を追記します。
+```
+use flake
 
-## Contributing
+export DISCORD_TOKEN=
+export GUILD_ID=
+export FORUM_ID=
+export KEMAL_ENV=production
+```
 
-1. Fork it (<https://github.com/your-github-user/n-high-lovelive/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-
-## Contributors
-
-- [marukun712](https://github.com/your-github-user) - creator and maintainer
+ビルドします。
+```bash
+shards build --release
+```

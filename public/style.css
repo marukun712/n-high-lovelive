@@ -1,0 +1,71 @@
+* {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+:root {
+  --pico-primary: #e40080;
+  --pico-primary-hover: #c20070;
+  --pico-primary-focus: rgba(228, 0, 128, .25);
+  --pico-primary-inverse: #fff;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: url("/circle-scatter-haikei.svg") center / cover no-repeat;
+  opacity: 0.2;
+
+  z-index: -1;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.0rem);
+  color: #e40080;
+  font-family: "ab-kirigirisu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  color: #e40080;
+  border-left: 6px solid #e40080;
+  padding-left: .6em;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+article {
+  background: rgba(255, 255, 255, .78);
+  backdrop-filter: blur(6px);
+}
+
+nav[aria-label] {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 224, 242, .88);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #e40080;
+}
+
+@media (max-width: 1280px) {
+  .hero-image {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-title {
+    display: none;
+  }
+}

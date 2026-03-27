@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N高グループラブライブ同好会ホームページ</title>
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pink.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Murecho:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'ovk6qdc',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () {h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";}, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () {a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try {Typekit.load(config)} catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <nav aria-label="main navigation" class="container-fluid">
+    <ul>
+      <li><strong style="font-family:ab-kirigirisu,sans-serif;font-weight:400;font-style:normal;"
+          class="nav-title">N高グループラブライブ同好会</strong>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="/#home">ホーム</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="#blog">ブログ</a></li>
+    </ul>
+  </nav>
+
+  <section id="blog" class="container blog fade-up" style="padding-top:5rem;padding-bottom:5rem;">
+    <h2 class="section-title">ブログ</h2>
+    <div hx-get="/posts" class="grid" hx-trigger="load">
+      読み込み中...
+    </div>
+  </section>
+
+  <script>
+    gsap.timeline({delay: 0.4})
+      .to('#blog', {opacity: 1, y: 0, duration: 0.5, ease: 'power3.out'});
+  </script>
+</body>
+
+</html>

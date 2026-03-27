@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N高グループラブライブ同好会ホームページ</title>
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pink.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,82 +20,10 @@
         scriptTimeout: 3000,
         async: true
       },
-        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        h = d.documentElement, t = setTimeout(function () {h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";}, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () {a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try {Typekit.load(config)} catch (e) { } }; s.parentNode.insertBefore(tk, s)
     })(document);
   </script>
-  <style>
-    * {
-      font-family: "Noto Sans JP", sans-serif;
-    }
-
-    :root {
-      --pico-primary: #e40080;
-      --pico-primary-hover: #c20070;
-      --pico-primary-focus: rgba(228, 0, 128, .25);
-      --pico-primary-inverse: #fff;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-
-      background: url("/circle-scatter-haikei.svg") center / cover no-repeat;
-      opacity: 0.2;
-
-      z-index: -1;
-    }
-
-    .hero-title {
-      font-size: clamp(2.4rem, 6vw, 4.0rem);
-      color: #e40080;
-      font-family: "ab-kirigirisu", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-    }
-
-    .section-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-      color: #e40080;
-      border-left: 6px solid #e40080;
-      padding-left: .6em;
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    article {
-      background: rgba(255, 255, 255, .78);
-      backdrop-filter: blur(6px);
-    }
-
-    nav[aria-label] {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 224, 242, .88);
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid #e40080;
-    }
-
-    @media (max-width: 1280px) {
-      .hero-image {
-        display: none;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .nav-title {
-        display: none;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -107,7 +36,7 @@
     <ul>
       <li><a href="#home">ホーム</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#blog">ブログ</a></li>
+      <li><a href="/blog">ブログ</a></li>
     </ul>
   </nav>
 
@@ -183,12 +112,11 @@
   </section>
 
   <script>
-    gsap.timeline({ delay: 0.4 })
-      .to('#hero-title', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
-      .to('#hero-sub', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
-      .to('#hero-btns', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
-      .to('#hero-image', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
-      .to('#about', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' });
+    gsap.timeline({delay: 0.4})
+      .to('#hero-title', {opacity: 1, y: 0, duration: 0.5, ease: 'power3.out'})
+      .to('#hero-sub', {opacity: 1, y: 0, duration: 0.5, ease: 'power3.out'})
+      .to('#hero-image', {opacity: 1, y: 0, duration: 0.5, ease: 'power3.out'})
+      .to('#about', {opacity: 1, y: 0, duration: 0.5, ease: 'power3.out'});
   </script>
 </body>
 

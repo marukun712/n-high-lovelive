@@ -11,6 +11,10 @@ targets:
 dependencies:
   kemal:
     github: kemalcr/kemal
+  markd:
+    github: icyleaf/markd
+  sanitize:
+    github: straight-shoota/sanitize
 
 crystal: ">= 1.18.2"
 license: MIT
