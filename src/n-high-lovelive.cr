@@ -104,4 +104,5 @@ get "/content/:id" do |env|
   end
 end
 
-Kemal.run
+port = (ENV["PORT"]? || "3000").to_i
+Kemal.run(port)
