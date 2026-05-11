@@ -11,17 +11,23 @@ GUILD_ID = ENV["GUILD_ID"]
 FORUM_ID = ENV["FORUM_ID"]
 
 def list_posts
-  response = HTTP::Client.get(
+  active_response = HTTP::Client.get(
     "https://discord.com/api/v10/guilds/#{GUILD_ID}/threads/active",
     headers: HTTP::Headers{"Authorization" => "Bot #{TOKEN}"}
   )
+  raise "Discord API error: #{active_response.status_code}" unless active_response.success?
+  active_threads = JSON.parse(active_response.body)["threads"].as_a
 
-  raise "Discord API error: #{response.status_code}" unless response.success?
+  archived_response = HTTP::Client.get(
+    "https://discord.com/api/v10/channels/#{FORUM_ID}/threads/archived/public",
+    headers: HTTP::Headers{"Authorization" => "Bot #{TOKEN}"}
+  )
+  raise "Discord API error: #{archived_response.status_code}" unless archived_response.success?
+  archived_threads = JSON.parse(archived_response.body)["threads"].as_a
 
-  data = JSON.parse(response.body)
-  threads = data["threads"].as_a
-  forum_threads = threads.select { |t| t["parent_id"].as_s? == FORUM_ID }
-  forum_threads.map { |t| {id: t["id"].as_s? || "", name: t["name"].as_s? || ""} }
+  all_threads = (active_threads + archived_threads)
+    .select { |t| t["parent_id"].as_s? == FORUM_ID }
+  all_threads.map { |t| {id: t["id"].as_s? || "", name: t["name"].as_s? || ""} }
 rescue ex : Exception
   Log.error { "list_posts failed: #{ex.message}" }
   [] of {id: String, name: String}
