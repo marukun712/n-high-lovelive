@@ -2,9 +2,12 @@ require "kemal"
 require "http/client"
 require "markd"
 require "sanitize"
+require "dotenv"
 
 sanitizer = Sanitize::Policy::HTMLSanitizer.common
 sanitizer.valid_classes << /language-.+/
+
+Dotenv.load
 
 TOKEN    = ENV["DISCORD_TOKEN"]
 GUILD_ID = ENV["GUILD_ID"]
