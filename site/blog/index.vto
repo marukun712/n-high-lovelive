@@ -10,7 +10,7 @@ type: page
   <ul class="post-list">
     {{ for post of search.pages("type=post", "date=desc") }}
     <li class="post-item">
-      <a class="post-link" href="{{ post.url }}">
+      <a class="post-link" href="{{ post.url |> url }}">
         <time class="post-date" datetime="{{ post.date |> isoDate }}">{{ post.date |> date }}</time>
         <span class="post-title">{{ post.title }}</span>
       </a>

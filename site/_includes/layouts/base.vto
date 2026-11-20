@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if title }}{{ title }} - {{ siteName }}{{ else }}{{ siteName }}{{ /if }}</title>
-  <meta name="description" content="{{ siteDescription }}">s">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if title }}{{ title }} - {{ siteName }}{{ else }}{{ siteName }}{{ /if }}</title>
+    <meta name="description" content="{{ siteDescription }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/styles.css' |> url }}">
   </head>
 
   <body>
     <header class="header">
       <div class="header-inner">
-        <a class="logo" href="/">{{ siteName }}</a>
+        <a class="logo" href="{{ '/' |> url }}">{{ siteName }}</a>
         <nav class="nav">
-          <a href="/#about">About</a>
-          <a href="/#join">参加方法</a>
-          <a href="/blog/">ブログ</a>
+          <a href="{{ '/' |> url }}#about">About</a>
+          <a href="{{ '/' |> url }}#join">参加方法</a>
+          <a href="{{ '/blog/' |> url }}">ブログ</a>
         </nav>
       </div>
     </header>

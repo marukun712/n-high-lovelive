@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"serve": "lume build -s",
-		"build": "lume build"
+		"build": "lume build --location=https://marukun712.github.io/n-high-lovelive/"
 	},
 	"dependencies": {
 		"@lumeland/cms": "^1.0.3",
