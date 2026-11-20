@@ -1,0 +1,23 @@
+---
+layout: layouts/base.vto
+title: ブログ
+type: page
+---
+<div class="container section">
+  <h1 class="page-title">ブログ</h1>
+  <p class="section-lead">同好会の活動やイベントの記録を掲載しています。</p>
+
+  <ul class="post-list">
+    {{ for post of search.pages("type=post", "date=desc") }}
+    <li class="post-item">
+      <a class="post-link" href="{{ post.url }}">
+        <time class="post-date" datetime="{{ post.date |> isoDate }}">{{ post.date |> date }}</time>
+        <span class="post-title">{{ post.title }}</span>
+      </a>
+      {{ if post.summary }}
+      <p class="post-summary">{{ post.summary }}</p>
+      {{ /if }}
+    </li>
+    {{ /for }}
+  </ul>
+</div>

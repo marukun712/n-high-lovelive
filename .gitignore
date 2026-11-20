@@ -1,8 +1,1 @@
-/docs/
-/lib/
-/bin/
-/.shards/
-*.dwarf
 .direnv
-.envrc
-.env

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if title }}{{ title }} - {{ siteName }}{{ else }}{{ siteName }}{{ /if }}</title>
+  <meta name="description" content="{{ siteDescription }}">s">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a class="logo" href="/">{{ siteName }}</a>
+        <nav class="nav">
+          <a href="/#about">About</a>
+          <a href="/#join">参加方法</a>
+          <a href="/blog/">ブログ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+    {{ content }}
+  </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-name">{{ siteName }}</p>
+        <p
+          class="footer-note">N中等部・N高グループ生のためのラブライブファンコミュニティ</p>
+      </div>
+    </footer>
+  </body>
+</html>
