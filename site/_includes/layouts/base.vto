@@ -7,17 +7,16 @@
     <meta name="description" content="{{ siteDescription }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
-      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap">
     <link rel="stylesheet" href="{{ '/styles.css' |> url }}">
   </head>
 
   <body>
-    <header class="header">
-      <div class="header-inner">
-        <a class="logo" href="{{ '/' |> url }}">{{ siteName }}</a>
-        <nav class="nav">
+    <header>
+      <div>
+        <a href="{{ '/' |> url }}">{{ siteName }}</a>
+        <nav>
           <a href="{{ '/' |> url }}#about">About</a>
           <a href="{{ '/' |> url }}#join">参加方法</a>
           <a href="{{ '/blog/' |> url }}">ブログ</a>
@@ -29,11 +28,10 @@
     {{ content }}
   </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <p class="footer-name">{{ siteName }}</p>
-        <p
-          class="footer-note">N中等部・N高グループ生のためのラブライブファンコミュニティ</p>
+    <footer>
+      <div>
+        <p>{{ siteName }}</p>
+        <p>N中等部・N高グループ生のためのラブライブファンコミュニティ</p>
       </div>
     </footer>
   </body>

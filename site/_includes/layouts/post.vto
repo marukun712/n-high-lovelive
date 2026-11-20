@@ -1,12 +1,9 @@
 ---
 layout: layouts/base.vto
 ---
-<article class="container section">
-  <p
-    class="post-date"><time datetime="{{ date |> isoDate }}">{{ date |> date }}</time></p>
-  <h1 class="page-title">{{ title }}</h1>
-  <div class="prose">
-    {{ content }}
-  </div>
+<article>
+  <h1>{{ title }}</h1>
+  <p><time datetime="{{ date |> isoDate }}">{{ date |> date }}</time></p>
+  {{ content }}
   <p class="back"><a href="{{ '/blog/' |> url }}">ブログ一覧へ戻る</a></p>
 </article>
